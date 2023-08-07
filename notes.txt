@@ -1,0 +1,3 @@
+-Intellij-
+	config in 'build, exec, deployment' > 'compiler' the Build Project automatically 
+	and in 'advanced settings' allow auto-make...
