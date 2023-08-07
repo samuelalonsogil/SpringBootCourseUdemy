@@ -1,3 +1,8 @@
 -Intellij-
 	config in 'build, exec, deployment' > 'compiler' the Build Project automatically 
 	and in 'advanced settings' allow auto-make...
+
+-Sprinboot useful dependencies-
+	DevTools-> fast app restarts, live reloads
+	Actuator-> useful endpoints-> /actuator to get the list
+	Spring Security-> add security to the app (default user->user)
