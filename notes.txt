@@ -4,5 +4,6 @@
 
 -Sprinboot useful dependencies-
 	DevTools-> fast app restarts, live reloads
-	Actuator-> useful endpoints-> /actuator to get the list
+	Actuator-> useful endpoints by default to monitor the app -> /actuator to get the list, 
+		create own properties-> /info
 	Spring Security-> add security to the app (default user->user)
