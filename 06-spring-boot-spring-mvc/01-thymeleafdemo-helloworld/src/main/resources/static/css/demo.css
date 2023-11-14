@@ -1,0 +1,20 @@
+.funny{
+    font-style: italic;
+    color: green;
+}
+
+.registration-form{
+    width:200px;
+    display:flex;
+    flex-direction:column;
+}
+
+.radio-buttons{
+    display:flex;
+    flex-direction: row;
+}
+
+.check-box{
+    display:flex;
+    flex-direction: row;
+}

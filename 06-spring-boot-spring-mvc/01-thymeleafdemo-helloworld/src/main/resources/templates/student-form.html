@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/css/demo.css}"/>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Form</title>
+</head>
+
+<body>
+<h3>Student Registration Form</h3>
+<form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
+    <div class="registration-form">
+                                                <!-- *{firstName} shortcut for student.firstName -->
+        <span>First name: </span> <input type="text" th:field="*{firstName}"> <!-- when form submitted setters method are called-->
+        <span>Last name: </span> <input type="text" th:field="*{lastName}">
+        <span>Country: </span>
+
+        <select  th:field="*{country}">
+            <option th:each="tempCountry : ${countries}"
+                    th:value="${tempCountry}"
+                    th:text="${tempCountry}"></option>
+        </select>
+
+        <span>Favourite Language: </span>
+        <div class="radio-buttons">
+            <input type="radio"
+                   th:field="*{language}"
+                   th:each="tempLanguage : ${languages}"
+                   th:value="${tempLanguage}"
+                   th:text="${tempLanguage}"/>
+            <!-- <input type="radio" th:field="*{language}" th:value="Java">Java</input>
+            <input type="radio" th:field="*{language}" th:value="JS">JS</input>
+            <input type="radio" th:field="*{language}" th:value="Python">Python</input> -->
+        </div>
+
+        <span>Favourite System: </span>
+        <div class="check-box">
+            <input type="checkbox"
+                   th:field="*{systems}"
+                   th:each="tempSystems : ${systems}"
+                   th:value="${tempSystems}"
+                   th:text="${tempSystems}"
+
+            />
+            <!-- <input type="checkbox" th:field="*{systems}" th:value="Windows"/>Linux</input>
+            <input type="checkbox" th:field="*{systems}" th:value="'MACOS'"/>MACOS</input> -->
+        </div>
+        <br/>
+        <input type="submit" value="Submit">
+    </div>
+
+</form>
+</body>
+</html>
