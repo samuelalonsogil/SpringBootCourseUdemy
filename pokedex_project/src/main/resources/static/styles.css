@@ -1,0 +1,29 @@
+#main-div{
+
+}
+
+.title-div{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.title-big{
+    font-family: "Helvetica", Sans-Serif;
+}
+
+#pokemon-div{
+    display: flex;
+    flex-direction: column;
+
+}
+
+#pokemon-form-div{
+
+
+}
+
+.pokemon-form{
+
+
+}

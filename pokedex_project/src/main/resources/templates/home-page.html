@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" >
+
+<head>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+
+<body>
+
+<div id="main-div">
+    <div class="title-div">
+        <h3 class="title-big">Home Page</h3>
+    </div>
+
+    <hr/>
+
+    <div id="pokemon-form-div">
+        <form class="pokemon-form" th:action="@{/get-pokemon}" th:object="${pokemon}" method="POST">
+            <input type="text" th:field="*{name}" placeholder="Introduce pokémon name">
+            <input type="submit" value="search">
+        </form>
+    </div>
+
+</div>
+</body>
+
+
+</html>

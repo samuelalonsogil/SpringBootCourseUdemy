@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <h2>Login Page!</h2>
+    <form action="#" th:action="@{/authenticateTheUser}" method="POST">
+
+        <!-- check for login error -->
+        <div th:if="${param.error}">
+            <i class="error">invalid password/username</i>
+        </div>
+
+        <!-- check for logout -->
+        <div th:if="${param.logout}">
+            <i class="logout">Logged out</i>
+        </div>
+
+        <p> User name: <input type="text" name="username"> </p>
+        <p> Password: <input type="password" name="password"> </p>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
+
+<style>
+    .error{
+        color:red;
+    }
+
+    .logout{
+        color:green;
+    }
+</style>
