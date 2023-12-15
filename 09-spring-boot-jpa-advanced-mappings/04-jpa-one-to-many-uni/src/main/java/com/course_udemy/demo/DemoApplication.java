@@ -22,19 +22,7 @@ public class DemoApplication {
 	public CommandLineRunner commandLineRunner(AppDAO appDAO){
 		return runner->{
 			System.out.println("hello world!");
-			//createInstructor(appDAO);
-			//findInstructor(appDAO);
-			//deleteInstructor(appDAO);
-			//findInstructorDetail(appDAO);
-			//deleteInstructorDetail(appDAO);
-			//createInstructorWithCourses(appDAO);
-			//findInstructorWithCourses(appDAO);
-			//findCoursesByInstructorId(appDAO);
-			//findInstructorWithCoursesJoinFetch(appDAO);
-			//updateInstructor(appDAO);
-			//updateCourse(appDAO);
-			//deleteInstructor(appDAO);
-			//deleteCourseById(appDAO);
+
 		};
 	}
 
