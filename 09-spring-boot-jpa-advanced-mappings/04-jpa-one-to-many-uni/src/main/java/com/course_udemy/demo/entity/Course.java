@@ -74,7 +74,7 @@ public class Course {
 
     /*convenience method*/
     public void addReview(Review review){
-        if (review == null) reviews = new ArrayList<>();
+        if (reviews == null) reviews = new ArrayList<>();
         reviews.add(review);
     }
 }

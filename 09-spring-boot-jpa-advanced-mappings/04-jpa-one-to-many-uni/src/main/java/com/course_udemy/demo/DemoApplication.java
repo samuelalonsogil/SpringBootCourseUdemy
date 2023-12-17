@@ -4,6 +4,7 @@ import com.course_udemy.demo.DAO.AppDAO;
 import com.course_udemy.demo.entity.Course;
 import com.course_udemy.demo.entity.Instructor;
 import com.course_udemy.demo.entity.InstructorDetail;
+import com.course_udemy.demo.entity.Review;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,8 +23,52 @@ public class DemoApplication {
 	public CommandLineRunner commandLineRunner(AppDAO appDAO){
 		return runner->{
 			System.out.println("hello world!");
-
+			//createCourseAndReviews(appDAO);
+			//findCourseAndReviewsByCourseId(appDAO);
+			deleteCourseAndReviews(appDAO);
 		};
+	}
+
+	private void deleteCourseAndReviews(AppDAO appDAO) {
+		int id = 10;
+		System.out.println("Delete course with ID: " + id);
+
+		/*will delete course and associated reviews because of cascade  */
+		appDAO.deleteCourse(id);
+
+		System.out.println("Done! ");
+	}
+
+	private void findCourseAndReviewsByCourseId(AppDAO appDAO) {
+		int id = 10;
+
+		System.out.println("Finding instructor id: " + id);
+
+		Course course = appDAO.findCourseAndReviewsById(id);
+
+		System.out.println("Course: " + course);
+		System.out.println("Reviews: " + course.getReviews() );
+
+		System.out.println("Done! "  );
+	}
+
+	private void createCourseAndReviews(AppDAO appDAO) {
+		/* create course */
+		Course course = new Course("Running course");
+
+		System.out.println("new course");
+
+		/* add some reviews */
+		course.addReview(new Review(" Great! ") );
+		course.addReview(new Review(" Awesome! ") );
+		course.addReview(new Review(" Bad! ") );
+
+		System.out.println("saving course");
+		System.out.println("course: " + course);
+		System.out.println(course.getReviews());
+
+		/* save course */
+		appDAO.save(course);
 	}
 
 	private void deleteCourseById(AppDAO appDAO) {
