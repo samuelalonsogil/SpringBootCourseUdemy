@@ -21,8 +21,54 @@ public class DemoApplication {
 		return runner->{
 			System.out.println("hello world!");
 			//createCourseAndStudents(appDAO);
-			findCourseAndStudents(appDAO);
+			//findCourseAndStudents(appDAO);
+			//findStudentsAndCourse(appDAO);
+			//addMoreCoursesForStudent(appDAO);
+			//deleteCourseById(appDAO);
+			deleteStudent(appDAO);
 		};
+	}
+
+	private void deleteStudent(AppDAO appDAO) {
+		int id = 1;
+		System.out.println("Deleting student id: " + id);
+		appDAO.deleteStudentById(id);
+		System.out.println("Done! ");
+
+	}
+
+	private void addMoreCoursesForStudent(AppDAO appDAO) {
+		int id = 2;
+		Student student = appDAO.findStudentsAndCoursesByStudentsId(id);
+
+		Course course01 = new Course("Guitar Hero ");
+		Course course02 = new Course("Atari games ");
+		Course course03 = new Course("Skate lessons ");
+
+		student.addCourse(course01);
+		student.addCourse(course02);
+		student.addCourse(course03);
+
+		System.out.println("Updating student: " + student);
+		System.out.println("courses: " + student.getCourses());
+
+		appDAO.update(student);
+
+		System.out.println("Done! ");
+
+	}
+
+	private void findStudentsAndCourse(AppDAO appDAO) {
+		int id = 1;
+
+		System.out.println("Finding student id: " + id);
+
+		Student student = appDAO.findStudentsAndCoursesByStudentsId(id);
+
+		System.out.println("Student: " + student);
+		System.out.println("Courses: " + student.getCourses() );
+
+		System.out.println("Done! "  );
 	}
 
 	private void findCourseAndStudents(AppDAO appDAO) {

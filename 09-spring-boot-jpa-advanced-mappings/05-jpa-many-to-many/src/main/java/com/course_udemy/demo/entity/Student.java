@@ -85,7 +85,6 @@ public class Student {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                ", courses=" + courses +
                 '}';
     }
 
