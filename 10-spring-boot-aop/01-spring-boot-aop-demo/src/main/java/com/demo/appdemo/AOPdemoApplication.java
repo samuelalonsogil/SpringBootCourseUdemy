@@ -24,11 +24,12 @@ public class AOPdemoApplication {
 
 
 	private void beforeAdvice(AccountDAO accountDAO, MemberShipDAO memberShipDAO) {
-		/*call business method*/
-		accountDAO.addAccount();
+		Account account = new Account();
 
-		/*call membership method*/
+		accountDAO.addAccount(account, true);
 		memberShipDAO.addSilly();
+		memberShipDAO.goToSleep();
+		accountDAO.doWork();
 	}
 
 
