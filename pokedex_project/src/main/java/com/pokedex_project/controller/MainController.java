@@ -15,7 +15,7 @@ public class MainController {
 
     @GetMapping("/")
     public String getHomePage(Model model){
-        model.addAttribute("pokemon", new Pokemon() );
+        //model.addAttribute("pokemon", new Pokemon() );
         return "home-page";
     }
 
